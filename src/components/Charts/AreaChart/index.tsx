@@ -8,10 +8,10 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { ILineChart } from "../../../ts/interfaces/graph-interfaces";
+import { IAreaChart } from "../../../ts/interfaces/graph-interfaces";
 
 interface ISalesAreaChart {
-  data: ILineChart[];
+  data: IAreaChart[];
 }
 
 const SalesAreaChart: React.FC<ISalesAreaChart> = ({ data }) => {

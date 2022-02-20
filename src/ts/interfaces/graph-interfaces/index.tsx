@@ -9,7 +9,13 @@ export interface IPieChart {
   salesNumber: number;
 }
 
-export interface ILineChart {
+export interface IAreaChart {
   year: number;
   totalSales: number;
+}
+
+export interface IBarChart {
+  year: number;
+  ecommerceSales: number;
+  nonEcommerceSales: number;
 }

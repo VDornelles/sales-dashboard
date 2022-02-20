@@ -1,6 +1,11 @@
 import produtcsSalesData from "../data/generalData";
 import { Products } from "../ts/enums/product-enums";
-import { ILineChart, IPieChart, IStackedBarChart } from "../ts/interfaces/graph-interfaces";
+import {
+  IAreaChart,
+  IBarChart,
+  IPieChart,
+  IStackedBarChart,
+} from "../ts/interfaces/graph-interfaces";
 import { ProductData, SalesData } from "../ts/interfaces/product-interfaces";
 
 export function getStackedChartDataByYear(year: number): IStackedBarChart[] {
@@ -40,18 +45,33 @@ export function getPieChartDataByYear(year: number) {
   return pieChartData;
 }
 
-export function getLineChartDataByProduct(product: Products): ILineChart[] {
+export function getLineChartDataByProduct(product: Products): IAreaChart[] {
   const productSales: SalesData[] = produtcsSalesData.get(product)?.salesData!;
-  const lineChartData: ILineChart[] = [];
+  const areaChartData: IAreaChart[] = [];
 
   productSales.forEach((salesData: SalesData) => {
-    lineChartData.push({
+    areaChartData.push({
       year: salesData.year,
       totalSales: salesData.totalSales,
     });
   });
 
-  console.log(lineChartData);
+  console.log(areaChartData);
 
-  return lineChartData.reverse();
+  return areaChartData.reverse();
+}
+
+export function getBarChartDataByProduct(product: Products) {
+  const productSales: SalesData[] = produtcsSalesData.get(product)?.salesData!;
+  const barChartData: IBarChart[] = [];
+
+  productSales.forEach((salesData: SalesData) => {
+    barChartData.push({
+      year: salesData.year,
+      ecommerceSales: salesData.ecommerceSales,
+      nonEcommerceSales: salesData.totalSales - salesData.ecommerceSales,
+    });
+  });
+
+  return barChartData.reverse();
 }
