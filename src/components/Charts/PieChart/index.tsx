@@ -4,14 +4,11 @@ import { DashboardContext, IDashboardContext } from "../../../store/dashboardCon
 import { IPieChart } from "../../../ts/interfaces/graph-interfaces";
 import { getPieChartDataByYear } from "../../../utils/chartUtils";
 
-const SalesPieChart: React.FC = () => {
-  const [pieChartData, setPieChartData] = useState<IPieChart[]>();
-  const { selectedYear }: IDashboardContext = useContext(DashboardContext);
+interface ISalesPieChart {
+  data: IPieChart[];
+}
 
-  useEffect(() => {
-    setPieChartData(getPieChartDataByYear(selectedYear));
-  }, [selectedYear]);
-
+const SalesPieChart: React.FC<ISalesPieChart> = ({ data }) => {
   const COLORS = ["#326cfc", "#1d3d8f", "#0048ff", "#002991", "#01154a"];
 
   const RADIAN = Math.PI / 180;
@@ -46,7 +43,7 @@ const SalesPieChart: React.FC = () => {
     <ResponsiveContainer width="100%" height="100%">
       <PieChart width={400} height={400}>
         <Pie
-          data={pieChartData}
+          data={data}
           cx="50%"
           cy="50%"
           labelLine={false}
@@ -55,7 +52,7 @@ const SalesPieChart: React.FC = () => {
           dataKey="salesNumber"
           label={renderCustomizedLabel}
         >
-          {pieChartData?.map((entry, index) => (
+          {data?.map((entry, index) => (
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
