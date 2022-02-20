@@ -2,14 +2,12 @@ import styled from "styled-components";
 
 export const InformationCard = styled.div`
   display: flex;
-  width: 80%;
+  width: 100%;
   max-height: 70px;
   justify-content: space-between;
   align-items: center;
   padding: 30px;
   background: #ffffff;
-  margin: 50px auto 50px auto;
-  margin-right: auto;
   box-shadow: 0px 2px 12px 5px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 `;
