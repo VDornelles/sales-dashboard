@@ -11,7 +11,11 @@ import { getBarChartDataByProduct, getLineChartDataByProduct } from "../../utils
 import { getTotalSalesByYear } from "../../utils/productUtils";
 import { PageContainer } from "./styles";
 
-const BooksPage: React.FC = () => {
+interface IProductPage {
+  productName: Products;
+}
+
+const ProductPage: React.FC<IProductPage> = ({ productName }) => {
   const [salesData, setSalesData] = useState<SalesData>();
   const [lineChartData, setLineChartData] = useState<IAreaChart[]>();
   const [barChartData, setBarChartData] = useState<IBarChart[]>();
@@ -19,13 +23,13 @@ const BooksPage: React.FC = () => {
   const { selectedYear }: IDashboardContext = useContext(DashboardContext);
 
   useEffect(() => {
-    setSalesData(getTotalSalesByYear(selectedYear, Products.BooksAndMagazines));
-  }, [selectedYear]);
+    setSalesData(getTotalSalesByYear(selectedYear, productName));
+  }, [selectedYear, productName]);
 
   useEffect(() => {
-    setLineChartData(getLineChartDataByProduct(Products.BooksAndMagazines));
-    setBarChartData(getBarChartDataByProduct(Products.BooksAndMagazines));
-  }, []);
+    setLineChartData(getLineChartDataByProduct(productName));
+    setBarChartData(getBarChartDataByProduct(productName));
+  }, [productName]);
 
   return (
     <PageContainer>
@@ -44,4 +48,4 @@ const BooksPage: React.FC = () => {
   );
 };
 
-export default BooksPage;
+export default ProductPage;
