@@ -11,7 +11,7 @@ const YearSelection: React.FC = () => {
 
   return (
     <StyYearSelection>
-      <button onClick={subtractYear} disabled={selectedYear === 2011}>
+      <button onClick={subtractYear} disabled={selectedYear === 2008}>
         -
       </button>
       <p>{selectedYear}</p>

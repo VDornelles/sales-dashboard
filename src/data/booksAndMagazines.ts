@@ -27,6 +27,21 @@ const salesData: SalesData[] = [
     ecommerceSales: 8773,
     year: 2011,
   },
+  {
+    totalSales: 8860,
+    ecommerceSales: 7428,
+    year: 2010,
+  },
+  {
+    totalSales: 7569,
+    ecommerceSales: 6000,
+    year: 2009,
+  },
+  {
+    totalSales: 7652,
+    ecommerceSales: 5599,
+    year: 2008,
+  },
 ];
 
 export const booksAndMagazines: ProductData = {
