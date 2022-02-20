@@ -1,33 +1,34 @@
 import React, { useState } from "react";
+import { MenuItems } from "../../ts/enums/menu-enums";
 import { HeaderMenu } from "../../ts/interfaces/header-interfaces";
 import { Container, Menu, StyLink, Title } from "./styles";
 
 const Header: React.FC = () => {
-  const [selectedMenu, setSelectedMenu] = useState<string>();
+  const [selectedMenu, setSelectedMenu] = useState<string>(MenuItems.HOME);
 
   const menuList: HeaderMenu[] = [
     {
-      menuName: "Home",
+      menuName: MenuItems.HOME,
       iconPath: "/images/home-icon.svg",
       pageLink: "home",
     },
     {
-      menuName: "Books",
+      menuName: MenuItems.BOOKS,
       iconPath: "/images/book-icon.svg",
       pageLink: "books-and-magazines",
     },
     {
-      menuName: "Clothing",
+      menuName: MenuItems.CLOTHING,
       iconPath: "/images/incognito-icon.svg",
       pageLink: "clothing-and-accessories",
     },
     {
-      menuName: "Electronics",
+      menuName: MenuItems.ELECTRONICS,
       iconPath: "/images/controller-icon.svg",
       pageLink: "electronics-and-appliances",
     },
     {
-      menuName: "Sporting Goods",
+      menuName: MenuItems.SPORTING_GOODS,
       iconPath: "/images/target-icon.svg",
       pageLink: "sporting-goods",
     },
