@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyGraphContainer = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 45%;
@@ -12,4 +13,9 @@ export const StyGraphContainer = styled.div`
   background: #ffffff;
   box-shadow: 0px 2px 12px 5px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+`;
+
+export const StyChartTitle = styled.div`
+  color: rgba(66, 65, 65);
+  font-size: 15px;
 `;

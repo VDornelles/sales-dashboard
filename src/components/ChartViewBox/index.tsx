@@ -1,9 +1,18 @@
 import React from "react";
 
-import { StyGraphContainer } from "./styles";
+import { StyChartTitle, StyGraphContainer } from "./styles";
 
-const ChartViewBox: React.FC = ({ children }) => {
-  return <StyGraphContainer>{children}</StyGraphContainer>;
+interface IChartViewBox {
+  title: string;
+}
+
+const ChartViewBox: React.FC<IChartViewBox> = ({ children, title }) => {
+  return (
+    <StyGraphContainer>
+      <StyChartTitle>{title}</StyChartTitle>
+      {children}
+    </StyGraphContainer>
+  );
 };
 
 export default ChartViewBox;
