@@ -1,14 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import {
-  Bar,
-  BarChart,
-  CartesianGrid,
-  Legend,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
+import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { DashboardContext, IDashboardContext } from "../../../store/dashboardContext";
 import { Products } from "../../../ts/enums/product-enums";
 import { IStackedBarChart } from "../../../ts/interfaces/graph-interfaces";

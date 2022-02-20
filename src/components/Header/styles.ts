@@ -8,7 +8,7 @@ export const Container = styled.div`
   width: 100%;
   height: 15vh;
   max-height: 100px;
-  background-color: #0339a3;
+  background-color: #411bfa;
   padding: 30px;
 
   img {
@@ -47,7 +47,7 @@ export const Menu = styled.div`
     padding: 0 12px;
 
     img {
-      height: 20px;
+      height: 15px;
       min-width: 20px;
       width: 20px;
       z-index: auto;

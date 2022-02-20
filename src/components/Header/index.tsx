@@ -6,14 +6,29 @@ import { Container, Menu, Title } from "./styles";
 const Header: React.FC = () => {
   const menuList: HeaderMenu[] = [
     {
-      menuName: "General",
+      menuName: "Home",
       iconPath: "/images/home-icon.svg",
       pageLink: "home",
     },
     {
-      menuName: "By Year",
-      iconPath: "/images/graph-icon.svg",
-      pageLink: "yearly",
+      menuName: "Books",
+      iconPath: "/images/book-icon.svg",
+      pageLink: "books-and-magazines",
+    },
+    {
+      menuName: "Clothing",
+      iconPath: "/images/incognito-icon.svg",
+      pageLink: "clothing-and-accessories",
+    },
+    {
+      menuName: "Electronics",
+      iconPath: "/images/controller-icon.svg",
+      pageLink: "electronics-and-appliances",
+    },
+    {
+      menuName: "Sporting Goods",
+      iconPath: "/images/target-icon.svg",
+      pageLink: "sporting-goods",
     },
   ];
 

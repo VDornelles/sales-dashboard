@@ -1,8 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
-import { DashboardContext, IDashboardContext } from "../../../store/dashboardContext";
 import { IPieChart } from "../../../ts/interfaces/graph-interfaces";
-import { getPieChartDataByYear } from "../../../utils/chartUtils";
 
 interface ISalesPieChart {
   data: IPieChart[];
