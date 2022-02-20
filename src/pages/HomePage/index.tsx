@@ -10,7 +10,7 @@ import { getPieChartDataByYear } from "../../utils/chartUtils";
 import { getTotalSalesByYear } from "../../utils/productUtils";
 import { PageContainer } from "./styles";
 
-const MainPage: React.FC = () => {
+const HomePage: React.FC = () => {
   const [salesData, setSalesData] = useState<SalesData>();
   const [pieChartData, setPieChartData] = useState<IPieChart[]>();
 
@@ -41,4 +41,4 @@ const MainPage: React.FC = () => {
   );
 };
 
-export default MainPage;
+export default HomePage;
