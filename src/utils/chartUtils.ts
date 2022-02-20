@@ -56,8 +56,6 @@ export function getLineChartDataByProduct(product: Products): IAreaChart[] {
     });
   });
 
-  console.log(areaChartData);
-
   return areaChartData.reverse();
 }
 

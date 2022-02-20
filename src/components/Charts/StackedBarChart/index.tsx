@@ -18,8 +18,6 @@ const StackedBarChart: React.FC = () => {
   const CustomIcon = (props: any) => {
     const { x, y, payload } = props;
 
-    console.log(payload);
-
     switch (payload.value) {
       case Products.BooksAndMagazines:
         return (

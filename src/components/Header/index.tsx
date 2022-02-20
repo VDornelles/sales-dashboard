@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Products } from "../../ts/enums/product-enums";
 import { HeaderMenu } from "../../ts/interfaces/header-interfaces";
 import { Container, Menu, StyLink, Title } from "./styles";
 
