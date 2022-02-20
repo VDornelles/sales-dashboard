@@ -1,5 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Label,
+  Legend,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 import { DashboardContext, IDashboardContext } from "../../../store/dashboardContext";
 import { Products } from "../../../ts/enums/product-enums";
 import { IStackedBarChart } from "../../../ts/interfaces/graph-interfaces";
@@ -62,15 +72,20 @@ const StackedBarChart: React.FC = () => {
           top: 20,
           right: 30,
           left: 20,
-          bottom: 5,
+          bottom: 10,
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="productName" tick={<CustomIcon />} />
-        <YAxis />
+        <YAxis>
+          <Label angle={270} position="left" style={{ textAnchor: "middle" }}>
+            Sales(Millions of Dollars)
+          </Label>
+        </YAxis>
         <Tooltip />
-        <Bar dataKey="nonEcommerceSales" stackId="a" fill="#1d3d8f" />
-        <Bar dataKey="ecommerceSales" stackId="a" fill="#326cfc" />
+        <Bar name="Non E-Commerce" dataKey="nonEcommerceSales" stackId="a" fill="#1d3d8f" />
+        <Bar name="E-Commerce" dataKey="ecommerceSales" stackId="a" fill="#326cfc" />
+        <Legend />
       </BarChart>
     </ResponsiveContainer>
   );

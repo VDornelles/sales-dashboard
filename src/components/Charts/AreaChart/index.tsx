@@ -3,6 +3,7 @@ import {
   Area,
   AreaChart,
   CartesianGrid,
+  Label,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -23,14 +24,20 @@ const SalesAreaChart: React.FC<ISalesAreaChart> = ({ data }) => {
         data={data}
         margin={{
           top: 10,
-          right: 30,
-          left: 0,
-          bottom: 0,
+          right: 20,
+          left: 20,
+          bottom: 20,
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="year" />
-        <YAxis />
+        <XAxis dataKey="year">
+          <Label value="Calendar Year" position="bottom" offset={0} />
+        </XAxis>
+        <YAxis>
+          <Label angle={270} position="left" style={{ textAnchor: "middle" }}>
+            Sales(Millions of Dollars)
+          </Label>
+        </YAxis>
         <Tooltip />
         <Area type="monotone" dataKey="totalSales" stroke="#1d3d8f" fill="#326cfc" />
       </AreaChart>

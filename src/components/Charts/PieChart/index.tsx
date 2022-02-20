@@ -1,5 +1,5 @@
 import React from "react";
-import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
+import { Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
 import { IPieChart } from "../../../ts/interfaces/graph-interfaces";
 
 interface ISalesPieChart {
@@ -54,6 +54,7 @@ const SalesPieChart: React.FC<ISalesPieChart> = ({ data }) => {
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
+        <Legend verticalAlign="bottom" align="center" />
         <Tooltip />
       </PieChart>
     </ResponsiveContainer>

@@ -26,12 +26,12 @@ const GeneralInformation: React.FC<IGeneralInformation> = ({
       </InformationData>
       <VerticalSeparator />
       <InformationData>
-        <p>Total Ecommerce Sales</p>
+        <p>Total E-Commerce Sales</p>
         <p>{ecommerceSales}</p>
       </InformationData>
       <VerticalSeparator />
       <InformationData>
-        <p>Ecommerce Sales Percentage</p>
+        <p>E-Commerce Sales Percentage</p>
         <p>{`${((ecommerceSales / totalSales) * 100).toFixed(2)}%`}</p>
       </InformationData>
     </InformationCard>

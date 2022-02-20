@@ -11,7 +11,7 @@ export const StyYearSelection = styled.div`
     align-items: center;
     justify-content: center;
     background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(0, 0, 0, 0.8);
     height: 25px;
     width: 25px;
     border-radius: 50%;

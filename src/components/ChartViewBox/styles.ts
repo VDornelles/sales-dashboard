@@ -6,10 +6,12 @@ export const StyGraphContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 45%;
-  height: 350px;
+  height: 60vh;
+  max-height: 400px;
+  min-height: 300px;
   width: 100%;
   align-items: center;
-  padding: 15px;
+  padding: 20px;
   background: #ffffff;
   box-shadow: 0px 2px 12px 5px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
