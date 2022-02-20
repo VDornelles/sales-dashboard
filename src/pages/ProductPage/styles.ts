@@ -8,9 +8,9 @@ export const PageContainer = styled.div`
   grid-gap: 50px;
   width: 80%;
   max-width: 1200px;
-  height: fit-content;
+  height: 100%;
   margin: auto;
-  padding: 50px;
+  padding: 30px;
 
   & > :first-child {
     grid-area: general;
