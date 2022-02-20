@@ -1,14 +1,5 @@
 import React from "react";
-import {
-  Bar,
-  BarChart,
-  CartesianGrid,
-  Legend,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
+import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { IBarChart } from "../../../ts/interfaces/graph-interfaces";
 
 interface ISimpleBarChart {
@@ -33,7 +24,6 @@ const SimpleBarChart: React.FC<ISimpleBarChart> = ({ data }) => {
         <XAxis dataKey="year" />
         <YAxis />
         <Tooltip />
-        <Legend />
         <Bar dataKey="ecommerceSales" fill="#1d3d8f" />
         <Bar dataKey="nonEcommerceSales" fill="#326cfc" />
       </BarChart>

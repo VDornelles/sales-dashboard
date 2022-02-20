@@ -38,10 +38,10 @@ const ProductPage: React.FC<IProductPage> = ({ productName }) => {
         ecommerceSales={salesData?.ecommerceSales}
         year={salesData?.year}
       />
-      <ChartViewBox title="Total Yearly Sales">
+      <ChartViewBox title="Total Yearly Sales (2008 - 2015)">
         {lineChartData && <SalesAreaChart data={lineChartData} />}
       </ChartViewBox>
-      <ChartViewBox title="Yearly Sales">
+      <ChartViewBox title="Yearly Sales (2008 - 2015)">
         {barChartData && <SimpleBarChart data={barChartData} />}
       </ChartViewBox>
     </PageContainer>

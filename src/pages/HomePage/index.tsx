@@ -31,10 +31,10 @@ const HomePage: React.FC = () => {
         ecommerceSales={salesData?.ecommerceSales}
         year={salesData?.year}
       />
-      <ChartViewBox title="Ecommerce/Non Ecommerce Sales Share">
+      <ChartViewBox title={`Ecommerce/Non Ecommerce Sales Share (${selectedYear})`}>
         <StackedBarChart />
       </ChartViewBox>
-      <ChartViewBox title="Total Sales Share by Product">
+      <ChartViewBox title={`Total Sales Share by Product (${selectedYear})`}>
         {pieChartData && <SalesPieChart data={pieChartData} />}
       </ChartViewBox>
     </PageContainer>
