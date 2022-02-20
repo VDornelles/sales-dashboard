@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Products } from "../../ts/enums/product-enums";
 import { HeaderMenu } from "../../ts/interfaces/header-interfaces";
-import { Container, Menu, Title } from "./styles";
+import { Container, Menu, StyLink, Title } from "./styles";
 
 const Header: React.FC = () => {
+  const [selectedMenu, setSelectedMenu] = useState<string>();
+
   const menuList: HeaderMenu[] = [
     {
       menuName: "Home",
@@ -32,6 +35,10 @@ const Header: React.FC = () => {
     },
   ];
 
+  const selectMenu = (menuName: string) => {
+    setSelectedMenu(menuName);
+  };
+
   return (
     <Container>
       <Title>
@@ -42,10 +49,15 @@ const Header: React.FC = () => {
       <Menu>
         {menuList.map((menu: HeaderMenu, index: number) => {
           return (
-            <Link to={menu.pageLink} key={`${menu.menuName}-${index}`}>
+            <StyLink
+              to={menu.pageLink}
+              key={`${menu.menuName}-${index}`}
+              onClick={() => selectMenu(menu.menuName)}
+              isSelected={menu.menuName === selectedMenu}
+            >
               <img src={menu.iconPath} alt="" />
               <span>{menu.menuName}</span>
-            </Link>
+            </StyLink>
           );
         })}
       </Menu>
