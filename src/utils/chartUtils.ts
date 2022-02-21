@@ -38,7 +38,7 @@ export function getPieChartDataByYear(year: number) {
     productSales &&
       pieChartData.push({
         name: productData.productName,
-        salesNumber: productSales.ecommerceSales,
+        salesNumber: productSales.totalSales,
       });
   });
 

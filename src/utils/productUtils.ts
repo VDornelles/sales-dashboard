@@ -6,32 +6,31 @@ export function getTotalSalesByYear(
   year: number,
   product: Products | undefined = undefined
 ): SalesData {
-  let totalSales: number = 0;
-  let ecommerceSales: number = 0;
+  const salesData: SalesData = {
+    totalSales: 0,
+    ecommerceSales: 0,
+    year: year,
+  };
 
   if (product) {
     const productData: ProductData = produtcsSalesData.get(product)!;
-    let productSales: SalesData | undefined = productData.salesData.find((salesData: SalesData) => {
-      return salesData.year === year;
-    });
-    if (productSales) {
-      totalSales = productSales.totalSales;
-      ecommerceSales = productSales.ecommerceSales;
-    }
+    getSalesData(productData, salesData, year);
   } else {
     produtcsSalesData.forEach((productData: ProductData) => {
-      let productSales: SalesData | undefined = productData.salesData.find(
-        (salesData: SalesData) => {
-          return salesData.year === year;
-        }
-      );
-
-      if (productSales) {
-        totalSales += productSales.totalSales;
-        ecommerceSales += productSales.ecommerceSales;
-      }
+      getSalesData(productData, salesData, year);
     });
   }
 
-  return { totalSales, ecommerceSales, year };
+  return salesData;
+}
+
+function getSalesData(productData: ProductData, salesData: SalesData, year: number) {
+  let productSales: SalesData | undefined = productData.salesData.find((data: SalesData) => {
+    return data.year === year;
+  });
+
+  if (productSales) {
+    salesData.totalSales += productSales.totalSales;
+    salesData.ecommerceSales += productSales.ecommerceSales;
+  }
 }
