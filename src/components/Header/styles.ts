@@ -9,7 +9,7 @@ export const Container = styled.div`
   width: 100%;
   height: 15vh;
   max-height: 100px;
-  background-color: #411bfa;
+  background-color: #1d3d8f;
   padding: 30px;
 
   img {
